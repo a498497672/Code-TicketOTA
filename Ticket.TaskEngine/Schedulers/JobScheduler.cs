@@ -1,0 +1,67 @@
+﻿using Quartz;
+using System.Configuration;
+using Ticket.TaskEngine.Jobs;
+
+namespace Ticket.TaskEngine.Schedulers
+{
+    public class JobScheduler
+    {
+        private readonly IScheduler _scheduler;
+        private readonly string _createOrderTimeInterval = ConfigurationManager.AppSettings["taskEngine:CreateOrderTimeInterval"];
+        private readonly string _createOTAOrderTimeInterval = ConfigurationManager.AppSettings["taskEngine:CreateOTAOrderTimeInterval"];
+        private readonly string _ticketConsumeTimeInterval = ConfigurationManager.AppSettings["taskEngine:TicketConsumeTimeInterval"];
+
+
+        public JobScheduler(IScheduler scheduler)
+        {
+            _scheduler = scheduler;
+        }
+
+        public void Start()
+        {
+            _scheduler.Start();
+            var noticeOrderConsumedJob = JobBuilder.Create<NoticeOrderConsumedJob>().Build();
+            var noticeOrderConsumedTrigger = TriggerBuilder.Create()
+                .StartNow()
+                .WithSimpleSchedule(x => x
+                    .WithIntervalInSeconds(int.Parse(_ticketConsumeTimeInterval))
+                    .RepeatForever())
+                .Build();
+            _scheduler.ScheduleJob(noticeOrderConsumedJob, noticeOrderConsumedTrigger);
+
+
+            //_scheduler.Start();
+            //var createOrderJob = JobBuilder.Create<CreateOrderJob>().Build();
+            //var createOrderTrigger = TriggerBuilder.Create()
+            //    .StartNow()
+            //    .WithSimpleSchedule(x => x
+            //        .WithIntervalInSeconds(int.Parse(_createOrderTimeInterval))
+            //        .RepeatForever())
+            //    .Build();
+            //_scheduler.ScheduleJob(createOrderJob, createOrderTrigger);
+
+            //var createOTAOrderJob = JobBuilder.Create<CreateOTAOrderJob>().Build();
+            //var createOTAOrderTrigger = TriggerBuilder.Create()
+            //    .StartNow()
+            //    .WithSimpleSchedule(x => x
+            //        .WithIntervalInSeconds(int.Parse(_createOTAOrderTimeInterval))
+            //        .RepeatForever())
+            //    .Build();
+            //_scheduler.ScheduleJob(createOTAOrderJob, createOTAOrderTrigger);
+
+            //var ticketConsumeJob = JobBuilder.Create<TicketConsumeJob>().Build();
+            //var ticketConsumeTrigger = TriggerBuilder.Create()
+            //    .StartNow()
+            //    .WithSimpleSchedule(x => x
+            //        .WithIntervalInSeconds(int.Parse(_ticketConsumeTimeInterval))
+            //        .RepeatForever())
+            //    .Build();
+            //_scheduler.ScheduleJob(ticketConsumeJob, ticketConsumeTrigger);
+        }
+
+        public void Stop()
+        {
+            _scheduler.Shutdown();
+        }
+    }
+}

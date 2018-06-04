@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0, maximum-scale=1.0" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+    <meta name="format-detection" content="telephone=no" />
+    <title>电子票</title>
+    <style type="text/css">
+        body, div, ul, li, p, iframe, h1, h2, h3, h4, h5, h6, button, input, select, option, textarea, table, tr, td, tbody, tfoot
+        {
+            margin: 0;
+            padding: 0;
+            user-select: none;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+        }
+        html, body
+        {
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+        }
+        body
+        {
+            font-family: 'Microsoft YaHei UI';
+            font-size: 12px;
+            background: #f9f9f9;
+        }
+        .fl
+        {
+            float: left;
+        }
+        .fr
+        {
+            float: right;
+        }
+        li
+        {
+            list-style: none;
+        }
+        a
+        {
+            text-decoration: none;
+            cursor: pointer;
+        }
+        i, em
+        {
+            font-style: normal;
+        }
+        input, select, button
+        {
+            outline: none;
+            appearance: none;
+            -moz-appearance: none;
+            -webkit-appearance: none;
+        }
+        button
+        {
+            cursor: pointer;
+        }
+        img
+        {
+            vertical-align: top;
+        }
+        
+        .printTicket
+        {
+            height: 90%;
+            width: 90%;
+            padding: 5%;
+        }
+        .printChild
+        {
+            height: auto;
+            overflow: hidden;
+            width: 100%;
+        }
+        .printTop
+        {
+            text-align: center;
+            width: 100%;
+            line-height: 47px;
+            height: 47px;
+            background-image: url("images/yijyanzheng_bq.png");
+            background-repeat: no-repeat;
+            background-size: 100% 47px;
+            font-size: 15px;
+            color: white;
+            letter-spacing: 1px;
+        }
+        .printContent
+        {
+            background: radial-gradient(6px at left top,transparent 50%,white 50%);
+            background: radial-gradient(6px at right top,transparent 50%,white 50%);
+        }
+        .printContentTop
+        {
+            padding: 5% 5% 0 5%;
+        }
+        .printContentTop i
+        {
+            float: left;
+            font-size: 15px;
+        }
+        .printContentTop a
+        {
+            float: right;
+            color: #333333;
+            font-size: 12px;
+        }
+        .printContentMiddle
+        {
+            padding: 0 5% 5%;
+            height: auto;
+            overflow: hidden;
+            width: 90%;
+        }
+        .printContentMiddle li:nth-of-type(1)
+        {
+            margin-top: 5%;
+        }
+        .printContentMiddle li
+        {
+            margin-top: 3%;
+            font-size: 11px;
+            color: #666666;
+        }
+        .printContentMiddle li em
+        {
+            margin-right: 5%;
+        }
+        .printContentBottom
+        {
+            padding: 3% 0;
+            background: white;
+            border-bottom-left-radius: 6px;
+            border-bottom-right-radius: 6px;
+        }
+        .printContentBottom dl dt
+        {
+            height: 250px;
+            width: 250px;
+            margin: 0 auto;
+            background-image: url("images/kuang.png");
+            background-repeat: no-repeat;
+            background-size: 250px 250px;
+        }
+        .printContentBottom dl dt img
+        {
+            margin: 7%;
+            height: 86%;
+            width: 86%;
+        }
+        .printContentBottom dl dd
+        {
+            text-align: center;
+            margin: 0 !important;
+            font-size: 15px;
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+    <div class="printTicket">
+        <div class="printChild">
+            <p class="printTop">
+                $data.TicketName</p>
+            <div class="printContent">
+                <div class="printContentTop">
+                    <i>有效票</i> <a href=""><span>订单号：</span><em>$data.OrderNo</em></a>
+                </div>
+                <ul class="printContentMiddle">
+                    <li><span>景区名称：</span><em>$data.ScenicName</em></li>
+                    <li><span>凭证号：</span><em>$data.CertificateNO</em></li>
+                    <li><span>单价：</span><em>$data.Price 元</em><span>数量：</span><em>$data.Quantity</em><span>总价：</span><em>$data.Amount
+                        元</em></li>
+                    <li><span>手机号：</span><em>$data.Mobile</em></li>
+                    <li><span>使用日期：</span><em>$data.ValidityDateStart.ToString("yyyy-MM-dd")</em></li>
+                </ul>
+                <div class="printContentBottom">
+                    <dl>
+                        <dt>
+                            <img src="$data.QRcodeUrl" /></dt>
+                        <dd>
+                            二维码门票</dd>
+                    </dl>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
