@@ -70,6 +70,12 @@
     <Compile Include="同程测试.Designer.cs">
       <DependentUpon>同程测试.cs</DependentUpon>
     </Compile>
+    <Compile Include="支付.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="支付.Designer.cs">
+      <DependentUpon>支付.cs</DependentUpon>
+    </Compile>
     <Compile Include="测试MD5.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -98,6 +104,9 @@
     <EmbeddedResource Include="同程测试.resx">
       <DependentUpon>同程测试.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="支付.resx">
+      <DependentUpon>支付.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="测试MD5.resx">
       <DependentUpon>测试MD5.cs</DependentUpon>
     </EmbeddedResource>
@@ -124,6 +133,10 @@
     <ProjectReference Include="..\FengjingSDK461\FengjingSDK461.csproj">
       <Project>{d1695393-478f-4beb-b235-a617f83a90c7}</Project>
       <Name>FengjingSDK461</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Ticket.Infrastructure.KouDaiLingQian\Ticket.Infrastructure.KouDaiLingQian.csproj">
+      <Project>{bf140fab-1061-409a-b725-eeec496cc7f4}</Project>
+      <Name>Ticket.Infrastructure.KouDaiLingQian</Name>
     </ProjectReference>
     <ProjectReference Include="..\Ticket.Utility\Ticket.Utility.csproj">
       <Project>{786eb7fc-ea4a-442e-9468-1140fc9a92cd}</Project>

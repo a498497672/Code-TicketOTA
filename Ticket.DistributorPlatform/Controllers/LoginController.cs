@@ -32,7 +32,7 @@ namespace Ticket.DistributorPlatform.Controllers
         /// <param name="condition"></param>
         /// <returns></returns>
         //[ActivityLog("登录", "系统管理员进行帐号登录")]
-        public ActionResult PostLogin(UserLoginModel  userLoginModel)
+        public JsonResult PostLogin(UserLoginModel  userLoginModel)
         {
             if (!ModelState.IsValid)
             {
@@ -48,7 +48,7 @@ namespace Ticket.DistributorPlatform.Controllers
         /// </summary>
         /// <returns></returns>
         //[ActivityLog("注销", "系统管理员进行帐号注销")]
-        public ActionResult LoginOut()
+        public JsonResult LoginOut()
         {
             this.ClearSessionAndCookie();
             var result = new TResult();

@@ -8,6 +8,7 @@ namespace Ticket.Model.Result
         {
             this.Success = false;
             this.Message = "请求失败";
+            this.Code = "500";
         }
 
         public TResult(bool success, string message)
@@ -15,7 +16,7 @@ namespace Ticket.Model.Result
             this.Success = success;
             this.Message = message;
         }
-
+        public string Code { get; set; }
         /// <summary>
         ///  是否成功
         /// </summary>
@@ -27,21 +28,22 @@ namespace Ticket.Model.Result
         public string Message { get; set; }
 
 
-        public TResult CommonResult(bool success, string message)
+        public TResult CommonResult(bool success, string message, string code)
         {
             this.Success = success;
             this.Message = message;
+            this.Code = code;
             return this;
         }
 
-        public virtual TResult SuccessResult(string message = "成功")
+        public virtual TResult SuccessResult(string message = "成功", string code = "200")
         {
-            return CommonResult(true, message);
+            return CommonResult(true, message, code);
         }
 
-        public virtual TResult FailureResult(string message = "失败")
+        public virtual TResult FailureResult(string message = "失败", string code = "500")
         {
-            return CommonResult(false, message);
+            return CommonResult(false, message, code);
         }
 
         public virtual string GetMessage()
@@ -92,5 +94,5 @@ namespace Ticket.Model.Result
         }
     }
 
-    
+
 }

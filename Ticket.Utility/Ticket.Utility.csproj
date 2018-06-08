@@ -86,6 +86,7 @@
     <Compile Include="Extensions\TimeExtension.cs" />
     <Compile Include="Helpers\Base64Helper.cs" />
     <Compile Include="Helpers\CheckCodeHelper.cs" />
+    <Compile Include="Helpers\DesHelper.cs" />
     <Compile Include="Helpers\EnumHelper.cs" />
     <Compile Include="Helpers\JnTemplateHelper.cs" />
     <Compile Include="Helpers\JsonSerializeHelper.cs" />

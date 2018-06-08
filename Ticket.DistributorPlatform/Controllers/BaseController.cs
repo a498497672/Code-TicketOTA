@@ -78,7 +78,7 @@ namespace Ticket.DistributorPlatform.Controllers
             {
                 if (filterContext.HttpContext.Request.IsAjaxRequest())
                 {
-                    filterContext.Result = Json(result.FailureResult("登录失效,请刷新页面"), JsonRequestBehavior.AllowGet);
+                    filterContext.Result = Json(result.FailureResult("登录失效,请刷新页面", "304"), JsonRequestBehavior.AllowGet);
                     return;
                 }
                 filterContext.Result = new RedirectResult("/Login/Index");

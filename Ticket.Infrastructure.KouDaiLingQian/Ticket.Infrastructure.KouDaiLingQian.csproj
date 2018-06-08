@@ -4,11 +4,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{9FCE677C-2CA7-4AA6-BF83-96A92927A37A}</ProjectGuid>
+    <ProjectGuid>{BF140FAB-1061-409A-B725-EEEC496CC7F4}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Ticket.Infrastructure.TongCheng</RootNamespace>
-    <AssemblyName>Ticket.Infrastructure.TongCheng</AssemblyName>
+    <RootNamespace>Ticket.Infrastructure.KouDaiLingQian</RootNamespace>
+    <AssemblyName>Ticket.Infrastructure.KouDaiLingQian</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -30,10 +30,6 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Newtonsoft.Json, Version=6.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
-      <HintPath>..\packages\Newtonsoft.Json.6.0.4\lib\net45\Newtonsoft.Json.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
@@ -45,38 +41,31 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Core\Api.cs" />
-    <Compile Include="Core\ConsumeNotice.cs" />
+    <Compile Include="Class1.cs" />
+    <Compile Include="Core\DeviceActivation.cs" />
+    <Compile Include="Core\Login.cs" />
+    <Compile Include="Core\MicroOrder.cs" />
     <Compile Include="Lib\Helper.cs" />
     <Compile Include="Lib\HttpService.cs" />
-    <Compile Include="Lib\Result.cs" />
+    <Compile Include="Lib\PayConfig.cs" />
+    <Compile Include="Lib\PayData.cs" />
     <Compile Include="Lib\ResultCode.cs" />
-    <Compile Include="Lib\TongChengConfig.cs" />
+    <Compile Include="Lib\KouDaiLingQianConfig.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Request\CancelOrderRequest.cs" />
-    <Compile Include="Request\ConsumeNoticeRequest.cs" />
-    <Compile Include="Request\CreateOrderRequest.cs" />
-    <Compile Include="Request\ProductRequest.cs" />
-    <Compile Include="Request\QueryOrderRequest.cs" />
-    <Compile Include="Request\RequestData.cs" />
-    <Compile Include="Request\RequestHead.cs" />
-    <Compile Include="Response\CancelOrderResponse.cs" />
-    <Compile Include="Response\ConsumeNoticeResponse.cs" />
-    <Compile Include="Response\CreateOrderResponse.cs" />
-    <Compile Include="Response\ProductResponse.cs" />
-    <Compile Include="Response\QueryOrderResponse.cs" />
-    <Compile Include="Response\ResponseData.cs" />
-    <Compile Include="Response\ResponseHead.cs" />
-    <Compile Include="TongChengGateway.cs" />
+    <Compile Include="Request\BaseRequest.cs" />
+    <Compile Include="Request\LoginRequest.cs" />
+    <Compile Include="Request\MicroOrderRequest.cs" />
+    <Compile Include="Response\ActivationResponse.cs" />
+    <Compile Include="Response\BaseResponse.cs" />
+    <Compile Include="Response\LoginResponse.cs" />
+    <Compile Include="Response\MicroOrderResponse.cs" />
   </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <ProjectReference Include="..\Ticket.Utility\Ticket.Utility.csproj">
       <Project>{786eb7fc-ea4a-442e-9468-1140fc9a92cd}</Project>
       <Name>Ticket.Utility</Name>
     </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="packages.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

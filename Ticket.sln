@@ -43,6 +43,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ticket.DistributorPlatform.
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ticket.SqlSugar", "Ticket.SqlSugar\Ticket.SqlSugar.csproj", "{99CAD451-B0FC-44E4-A1B5-BCEDADD5C1D1}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ticket.Infrastructure.KouDaiLingQian", "Ticket.Infrastructure.KouDaiLingQian\Ticket.Infrastructure.KouDaiLingQian.csproj", "{BF140FAB-1061-409A-B725-EEEC496CC7F4}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -129,6 +131,10 @@ Global
 		{99CAD451-B0FC-44E4-A1B5-BCEDADD5C1D1}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{99CAD451-B0FC-44E4-A1B5-BCEDADD5C1D1}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{99CAD451-B0FC-44E4-A1B5-BCEDADD5C1D1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BF140FAB-1061-409A-B725-EEEC496CC7F4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BF140FAB-1061-409A-B725-EEEC496CC7F4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BF140FAB-1061-409A-B725-EEEC496CC7F4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BF140FAB-1061-409A-B725-EEEC496CC7F4}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
